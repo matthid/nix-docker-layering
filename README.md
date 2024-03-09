@@ -15,11 +15,9 @@ But what if you want to implement/experiment with custom strategies? This projec
 ```usage.nix
 { pkgs ? import <nixpkgs> {} }:
 let
-  # Example: Importing directly from a GitHub repository
   docker_layering = import (pkgs.fetchTarball {
-    # URL of the tarball archive of the specific commit, branch, or tag
     url = "https://github.com/matthid/nix-docker-layering/archive/1.0.0.tar.gz";
-    #sha256 = "<hash>";
+    sha256 = "0g5y363m479b0pcyv0vkma5ji3x5w2hhw0n61g2wgqaxzraaddva";
   }) { inherit pkgs; };
 in
 docker_layering.streamLayeredImage {
